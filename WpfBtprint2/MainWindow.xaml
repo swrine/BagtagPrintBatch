@@ -1,0 +1,35 @@
+﻿<Window x:Name="MainWindow1" x:Class="WpfBtprint2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBtprint2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="358.874" Width="725.824" Loaded="MainWindow1_Loaded">
+    <Grid>
+        <Button x:Name="button_print" Content="Print" HorizontalAlignment="Left" Margin="19,42,0,0" VerticalAlignment="Top" Width="85" Height="32" Click="button_print_Click"/>
+        <Button x:Name="button_cancel_print" Content="Cancel" HorizontalAlignment="Left" Margin="158,42,0,0" VerticalAlignment="Top" Width="87" Height="32" IsEnabled="False" Click="button_cancel_print_Click"/>
+        <TextBox x:Name="logBox" HorizontalAlignment="Left" Height="231" Margin="15,81,0,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Text="" VerticalAlignment="Top" Width="685" RenderTransformOrigin="0.5,0.5" TextChanged="logBox_TextChanged">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.468"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="2.167"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="718">
+            <MenuItem Header="File" Height="30">
+                <MenuItem Header="Open Data File" Click="OpenDataFile_Click"/>
+            </MenuItem>
+            <MenuItem Header="Preparation" Height="30">
+                <MenuItem Header="Connect COM Port" Click="ConnectCOMPort_Click"/>
+                <MenuItem Header="Import Pectab">
+                    <MenuItem Header="IATA Res740 Recomm 1" HorizontalAlignment="Left" Width="240" Click="Pectab_IATARes740Recomm1_Click"/>
+                    <MenuItem Header="Integration Test" HorizontalAlignment="Left" Width="240" Click="Pectab_IntTest_Click"/>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>
